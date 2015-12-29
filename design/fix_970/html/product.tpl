@@ -248,8 +248,8 @@
 			  }, 
 			  success: function(data, textStatus, jqXHR){
 				//console.log(data);
-				$('<p style="color:green;">Заявка принята</p>').insertAfter( ".beedback_form" );
-				$( ".beedback_form" ).remove();
+				$('<p style="color:green;">Заявка принята</p>').insertAfter( ".beedback_form_rassrochka" );
+				$( ".beedback_form_rassrochka" ).remove();
 			  },
 			  error: function(jqXHR, textStatus){
 				console.log('Ошибка');

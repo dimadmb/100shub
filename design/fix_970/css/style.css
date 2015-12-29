@@ -615,6 +615,14 @@ font-family:Arial;
 	width: 90%;
 	overflow: hidden;
 }
+.beedback_form_rassrochka {
+	background-color: #f3f3f3;
+	border: 1px dotted #e0e0e0;
+	padding: 20px;
+	margin-top: 20px;
+	width: 90%;
+	overflow: hidden;
+}
 .beedback_form .input_captcha {
 	float: left;
 	width: 150px;
