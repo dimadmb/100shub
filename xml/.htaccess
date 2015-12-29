@@ -1,0 +1,13 @@
+order deny,allow 
+deny from all
+
+AddDefaultCharset UTF-8
+RewriteEngine on
+
+RewriteCond ${REQUEST_FILENAME} !-d
+RewriteCond ${REQUEST_FILENAME} !-f
+
+# Каталог товаров
+RewriteRule ^([^\.]+)/count.xml?$	index.php?module=$1&action=count	[L,QSA]
+RewriteRule ^([^\.]+)/([0-9]+).xml?$	index.php?module=$1&id=$2	[L,QSA]
+RewriteRule ^([^\.]+).xml?$	index.php?module=$1	[L,QSA]

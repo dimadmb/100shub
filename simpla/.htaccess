@@ -1,0 +1,4 @@
+#AuthName "Simpla CMS"
+#AuthType Basic
+#AuthUserFile /home/a100shub/100shub.ru/www/simpla/.passwd
+#require valid-user

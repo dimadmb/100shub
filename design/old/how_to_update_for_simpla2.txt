@@ -1,0 +1,31 @@
+Переименовать catalog.tpl в hits.tpl
+static_page.tpl в page.tpl
+news_item в post.tpl
+news_tpl в blog.tpl
+registration.tpl в register.tpl
+account.tpl в user.tpl
+
+Заменить везде {defun} на {function}:
+{function name=categories_tree}
+..
+{categories_tree categories=$c->subcategories} 
+{/function}
+{categories_tree categories=$categories}
+ 
+заменить
+<base href="http://{$root_url}/">
+<meta name="description" content="{$description|escape}" />
+<meta name="keywords" content="{$keywords|escape}" />
+на
+<base href="{$config->root_url}">
+<meta name="description" content="{$meta_description|escape}" />
+<meta name="keywords"    content="{$meta_keywords|escape}" />
+
+заменить
+{foreach name=sections from=$sections item=s}
+на
+{foreach name=sections from=$pages item=s}
+
+{if $section->id == $s->section_id}
+на
+{if $page->id == $s->id}
