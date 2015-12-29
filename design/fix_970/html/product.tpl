@@ -131,6 +131,17 @@
 	<p style="font-size:18px; margin-top:20px;">Ежемесячный платёж {(($product->variant->price*1)/12)|convert} руб</p>
 	<p style="font-size:18px;">Переплата  0 руб</p>	
 	
+	<form action="/contact#callback" class="form beedback_form" method="post">
+		<p style="text-align:center; font-size:18px;">Отправить заявку</p>
+	<label>Имя</label>
+		<input format=".+" notice="Введите имя" value="" name="name_callback" maxlength="255" type="text">
+		
+		<label>Телефон</label>
+		<input format=".+" notice="Введите телефон" value="" name="phone_callback" maxlength="255" type="text">
+		<button class="button_send" type="submit" name="callback" >Отправить</button>
+	</form>	<br>	
+	
+	
 	<table class="table_raschet">
 		<tr>
 			<th>Месяц</th>
