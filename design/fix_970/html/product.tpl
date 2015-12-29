@@ -208,10 +208,10 @@
 	$('.beedback_form').submit(function(){
 		//console.log('submit');
 			
-			if ( ($('input[name="name_callback"]').val() != '') && ($('input[name="phone_callback"]').val() != '' )){
+			if ( ($('.beedback_form input[name="name_callback"]').val() != '') && ($('.beedback_form input[name="phone_callback"]').val() != '' )){
 			
-			data = 'name_callback='+$('input[name="name_callback"]').val()+'&phone_callback='+$('input[name="phone_callback"]').val()+'<br>Заявка на кредит {/literal}{$product->name|escape} {$product->variant->price|convert} {$currency->sign|escape}{literal}<br>Взнос '+$( "#input_vznos" ).val()+' <br>Срок '+$( "#input_srok" ).val()+'&callback=45';
-			//console.log(data);
+			data = 'name_callback='+$('.beedback_form input[name="name_callback"]').val()+'&phone_callback='+$('.beedback_form input[name="phone_callback"]').val()+'<br>Заявка на кредит {/literal}{$product->name|escape} {$product->variant->price|convert} {$currency->sign|escape}{literal}<br>Взнос '+$( "#input_vznos" ).val()+' <br>Срок '+$( "#input_srok" ).val()+'&callback=45';
+			console.log(data);
 			$.ajax("/contact", {
 			  type: "POST",
 			  data: data,
@@ -235,9 +235,9 @@
 	$('.beedback_form_rassrochka').submit(function(){
 		//console.log('submit');
 			
-			if ( ($('input[name="name_callback"]').val() != '') && ($('input[name="phone_callback"]').val() != '' )){
+			if ( ($('.beedback_form_rassrochka input[name="name_callback"]').val() != '') && ($('.beedback_form_rassrochka input[name="phone_callback"]').val() != '' )){
 			
-			data = 'name_callback='+$('input[name="name_callback"]').val()+'&phone_callback='+$('input[name="phone_callback"]').val()+'<br>Заявка на Рассрочку {/literal}{$product->name|escape} {$product->variant->price|convert} {$currency->sign|escape}{literal}&callback=45';
+			data = 'name_callback='+$('.beedback_form_rassrochka input[name="name_callback"]').val()+'&phone_callback='+$('.beedback_form_rassrochka input[name="phone_callback"]').val()+'<br>Заявка на Рассрочку {/literal}{$product->name|escape} {$product->variant->price|convert} {$currency->sign|escape}{literal}&callback=45';
 			//console.log(data);
 			$.ajax("/contact", {
 			  type: "POST",

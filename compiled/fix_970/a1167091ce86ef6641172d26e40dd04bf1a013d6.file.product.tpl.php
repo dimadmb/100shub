@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2015-12-29 15:35:31
+<?php /* Smarty version Smarty-3.0.7, created on 2015-12-29 15:53:40
          compiled from "/home/users/1/12nas24/domains/alyj.ru//design/fix_970/html/product.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8257776756827e1339e9a2-80453911%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1695831099568282541d9331-33510580%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a1167091ce86ef6641172d26e40dd04bf1a013d6' => 
     array (
       0 => '/home/users/1/12nas24/domains/alyj.ru//design/fix_970/html/product.tpl',
-      1 => 1451392486,
+      1 => 1451393611,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8257776756827e1339e9a2-80453911',
+  'nocache_hash' => '1695831099568282541d9331-33510580',
   'function' => 
   array (
   ),
@@ -282,13 +282,13 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 	$('.beedback_form').submit(function(){
 		//console.log('submit');
 			
-			if ( ($('input[name="name_callback"]').val() != '') && ($('input[name="phone_callback"]').val() != '' )){
+			if ( ($('.beedback_form input[name="name_callback"]').val() != '') && ($('.beedback_form input[name="phone_callback"]').val() != '' )){
 			
-			data = 'name_callback='+$('input[name="name_callback"]').val()+'&phone_callback='+$('input[name="phone_callback"]').val()+'<br>Заявка на кредит <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('product')->value->name);?>
+			data = 'name_callback='+$('.beedback_form input[name="name_callback"]').val()+'&phone_callback='+$('.beedback_form input[name="phone_callback"]').val()+'<br>Заявка на кредит <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('product')->value->name);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->getVariable('product')->value->variant->price);?>
  <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('currency')->value->sign);?>
 <br>Взнос '+$( "#input_vznos" ).val()+' <br>Срок '+$( "#input_srok" ).val()+'&callback=45';
-			//console.log(data);
+			console.log(data);
 			$.ajax("/contact", {
 			  type: "POST",
 			  data: data,
@@ -312,9 +312,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 	$('.beedback_form_rassrochka').submit(function(){
 		//console.log('submit');
 			
-			if ( ($('input[name="name_callback"]').val() != '') && ($('input[name="phone_callback"]').val() != '' )){
+			if ( ($('.beedback_form_rassrochka input[name="name_callback"]').val() != '') && ($('.beedback_form_rassrochka input[name="phone_callback"]').val() != '' )){
 			
-			data = 'name_callback='+$('input[name="name_callback"]').val()+'&phone_callback='+$('input[name="phone_callback"]').val()+'<br>Заявка на Рассрочку <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('product')->value->name);?>
+			data = 'name_callback='+$('.beedback_form_rassrochka input[name="name_callback"]').val()+'&phone_callback='+$('.beedback_form_rassrochka input[name="phone_callback"]').val()+'<br>Заявка на Рассрочку <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('product')->value->name);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['convert'][0][0]->convert($_smarty_tpl->getVariable('product')->value->variant->price);?>
  <?php echo smarty_modifier_escape($_smarty_tpl->getVariable('currency')->value->sign);?>
 &callback=45';
@@ -328,8 +328,8 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			  }, 
 			  success: function(data, textStatus, jqXHR){
 				//console.log(data);
-				$('<p style="color:green;">Заявка принята</p>').insertAfter( ".beedback_form" );
-				$( ".beedback_form" ).remove();
+				$('<p style="color:green;">Заявка принята</p>').insertAfter( ".beedback_form_rassrochka" );
+				$( ".beedback_form_rassrochka" ).remove();
 			  },
 			  error: function(jqXHR, textStatus){
 				console.log('Ошибка');
